@@ -1,0 +1,9 @@
+#close to working script for question 1
+#
+#cat wages.csv | tail -n +2 | sort -u -k1,1 -k2,2n | cut -d , -f 1,2 | tr , " " > Question1.txt
+#
+#
+#issue is it sorts years experience weird. like the following
+# 1, 11, 13, 15, 2, 3, 4
+#possible fix is find a way to convert all single numbers to 2 fields
+#i.e. 01 instead of 1
