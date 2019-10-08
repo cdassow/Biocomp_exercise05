@@ -1,15 +1,18 @@
-## Question 1
-
+## Question 1 
+echo "Question 1"
+cat $1 | tr ',' ' ' | sort --field-separator=' ' --key=$2,$3 | cut -d ' ' -f $2,$3 | grep -v gender | grep -v year
+ 
 ## Question 2
+echo "Question 2"
 ## a.
 echo "gender highest earner"
-sort -k 4 wages.csv | tr "," " " | awk 'NR==3295 {print $1; exit}'
+sort -k 4 wages.csv | tr "," " " | awk 'NR==3295 {print $1}'
 
-echo "years experienc highest earner"
+echo "years experience highest earner"
 sort -k 4 wages.csv | tr "," " " | awk 'NR==3295  {print $2}'
 
 echo "wage highest earner"
-sort -k 4 wages.csv | tr "," " " | awk 'NR==3295 {print $3}
+sort -k 4 wages.csv | tr "," " " | awk 'NR==3295 {print $3}'
 
 ## b.
 echo "gender lowest earner"
@@ -26,5 +29,5 @@ echo "number of females in top ten earners"
 cat wages.csv | head -n 10 | grep "female" | wc -l
 
 ## Question 3
-
+echo "Question 3"
 
