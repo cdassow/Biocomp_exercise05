@@ -30,4 +30,11 @@ cat wages.csv | head -n 10 | grep "female" | wc -l
 
 ## Question 3
 echo "Question 3"
+echo "The difference between 16 year and 12 year minimum wage"
+
+val1=$(cat $1 | grep 16 | cut -d ',' -f $4 | sort -n | head -n 1)
+
+val2=$(cat $1 | grep 12 | cut -d ',' -f $4 | sort -n | head -n 1)
+
+echo $val1 - $val2 | bc
 
