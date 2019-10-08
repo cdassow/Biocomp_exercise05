@@ -11,10 +11,10 @@ do
 cat $file | cut -d , -f 1,2 | grep -v "gender" | tr "," " " | sort -k1,1 -k2,2g | uniq > gender-yearsExperience.txt
 
 echo "Gender, yearsExperience, and wage for highest earner:"
-cat $file | tr "," " " | grep -v "gender" | sort -k 4 -n -r | head -n 1 | cut -f 1,2,4
+cat $file | tr "," " " | grep -v "gender" | sort -k 4 -n -r | head -n 1 | cut -d " " -f 1,2,4
 
 echo "Gender, yearsExperience, and wage for lowest earner:"
-cat $file | tr "," " " | grep -v "gender" | sort -k 4 -n | head -n 1 | cut -f 1,2,4
+cat $file | tr "," " " | grep -v "gender" | sort -k 4 -n | head -n 1 | cut -d " " -f 1,2,4
 
 echo "Number of females in top 10 earners:"
 cat $file | tr "," " " | sort -k 4 -n -r | head -n 10 | cut -d , -f 1,2,4 | grep "female" -c
