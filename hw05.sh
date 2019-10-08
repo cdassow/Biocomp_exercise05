@@ -38,3 +38,8 @@ val2=$(cat $1 | grep 12 | cut -d ',' -f $4 | sort -n | head -n 1)
 
 echo $val1 - $val2 | bc
 
+echo "effect of graduating college"
+
+## grep for 12 or 16 years of education, then sort by wage
+## then use awk to get wage and subtract 
+echo "$val1 - $val2" | bc
