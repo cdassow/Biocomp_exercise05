@@ -3,7 +3,7 @@
 ## Question 2
 ## a.
 echo "gender highest earner"
-sort -k 4 wages.csv | tr "," " " | awk 'NR==1 {print $1; exit}'
+sort -k 4 wages.csv | tr "," " " | awk 'NR==3295 {print $1; exit}'
 
 echo "years experienc highest earner"
 sort -k 4 wages.csv | tr "," " " | awk 'NR==3295  {print $2}'
