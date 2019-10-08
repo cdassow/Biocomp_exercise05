@@ -31,3 +31,8 @@ cat wages.csv | head -n 10 | grep "female" | wc -l
 ## Question 3
 echo "Question 3"
 
+echo "effect of graduating college"
+
+## grep for 12 or 16 years of education, then sort by wage
+## then use awk to get wage and subtract 
+echo "$val1 - $val2" | bc
