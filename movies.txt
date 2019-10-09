@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 Elf
 The Heat
 The Departed
 White Christmas
 Friends With Benefits
+Superbad
+=======
+Friends With Benefits
+White Christmas
+Superbad
+The Heat
+Elf
+The Departed
+>>>>>>> c977d0cbaafcf573a201a62858002af78d115508
+Final List
+Elf 
+White Christmas
+The Heat
+Friends with Benefits
+The Departed
 Superbad
