@@ -3,14 +3,14 @@
 
 #high school
 cut -d , -f 3-4 "$1" | grep -E "1[2-5]" > highschool.csv
-hsWageAvg = avg col 4 highschoo.csv
+countHS = echo wc -l highschool.csv
+sumHS = 
+hsWageAvg = $sumHS/$countHS | bc
 
 #college
 cut -d , -f 3-4 "$1" | grep -E "1[6-]" > college.csv
-collegeWageAvg = avg col 4 college.csv
+countC= echo wc -l college.csv
+sumC=
+collegeWageAvg = $sumC/$countC | bc
 
 echo "$hsWageAvg - $collegeWageAvg" | bc
-
-#cp columns 3 and 4, separate high school graduates (3rd column, 12=<16) and college graduates (3rd column, 16=<) into separate csv files maybe outside the script
-#take average of 4th column for hs and college
-#subtract college_avg_wage - hs_avg_wage = final answer
