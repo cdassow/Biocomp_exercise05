@@ -2,7 +2,7 @@
 #USAGE: bash genderExp.sh filename delimitor
 
 #Assignment 1
-cut -d "$2" -f 1-2 "$1" | tr "," " " | sort -k1 -t"$2" | sort -k2 -t"$2" -n > newwage.csv
+cut -d "$2" -f 1-2 "$1" | tr "," " " | sort -u | sort -k1 | sort -k2 -n > newwage.csv
 
 #Assignment 2
 echo Highest Earner
