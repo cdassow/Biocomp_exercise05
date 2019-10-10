@@ -1,0 +1,7 @@
+#SCRIPT DONE!
+#
+#cat wages.csv | tail -n +2 | cut -d , -f 1,2 | tr , " " | sort -k1,1 -k2,2n -u > Question1.txt
+#
+#Q1 complete
+#
+#
