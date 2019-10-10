@@ -16,8 +16,6 @@ cat wages.csv | grep female | sort –n –t’,’ –k4 –r | head –n 10
 
 #QUESTION 3
 #get the columns of yearsExperience and wage separated and the yearsExperience we want
-cat wages.csv | cut -d , -f 2,4 | grep "^12,"
-cat wages.csv | cut -d , -f 2,4 | grep "^16,"
-
-
+val1=$(cat wages.csv | cut -d , -f 2,4 | grep "^12," | head -n 1)
+val2=$(cat wages.csv | cut -d , -f 2,4 | grep "^16," | head -n 1)
 echo "$val1 - $val2" | bc
