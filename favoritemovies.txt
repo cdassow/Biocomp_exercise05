@@ -1,6 +1,11 @@
 1. Big Daddy
-3. Interstellar
-2. Remember the Titans
+<<<<<<< HEAD
+2. Interstellar
+3. Remember the Titans
+=======
+2. Interstellar
+3. Remember the Titans
+>>>>>>> c31168ad703983c0593db299e48f756a13025fe0
 4. Focus
 5. Pulp Fiction
 6. Rudy
