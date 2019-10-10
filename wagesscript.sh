@@ -6,7 +6,7 @@ cat wages.csv | sort -n -t , -k 4 -r | head -n 1;
 echo "Part 2"
 cat wages.csv | sort -n -t , -k 4 | head -n 2 | tail -n 1;
 echo "Part 3"
-cat wages.csv | grep female | sort -n -t , -k 4 -r | head -n 10; 
+cat wages.csv | sort -n -t , -k 4 -r | head -n 10 | grep female | wc -l;
 #QUESTION 3
 #get the columns of yearsExperience and wage separated and the yearsExperience we want
 val1=$(cat wages.csv | cut -d , -f 2,4 | grep "^12," | head -n 1)
