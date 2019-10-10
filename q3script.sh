@@ -3,10 +3,10 @@
 
 
 #High School Min
-HighSchoolMin=$(cat wages.csv | cut -d "," -f 3,4 | egrep "^[1]{1}[2]{1}," | tr , " " | sort -k2,2r | tail -n 1 | cut -d " " -f 2)
+HighSchoolMin=$(cat wages.csv | cut -d "," -f 3,4 | egrep "^[1]{1}[2]{1}," | tr , " " | sort -k2,2r | tail -n 1 | cut -d " " -f 2 | tr \r \n)
 
 #College Min
-CollegeMin=$(cat wages.csv | cut -d "," -f 3,4 | egrep "^[1]{1}[6]{1}," | tr , " " | sort -k2,2r | tail -n 1 | cut -d " " -f 2)
+CollegeMin=$(cat wages.csv | cut -d "," -f 3,4 | egrep "^[1]{1}[6]{1}," | tr , " " | sort -k2,2r | tail -n 1 | cut -d " " -f 2 | tr \r \n)
 
 Difference=$(echo "$CollegeMin-$HighSchoolMin" | bc)
 
