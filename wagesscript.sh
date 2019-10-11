@@ -10,4 +10,4 @@ cat wages.csv | sort -n -t , -k 4 -r | head -n 10 | grep female | wc -l;
 #QUESTION 3
 val1=$(cat wages.csv | cut -d , -f 2,4 | grep "^12," | cut -d , -f 2 | head -n 1)
 val2=$(cat wages.csv | cut -d , -f 2,4 | grep "^16," | cut -d , -f 2 | head -n 1)
-echo "$val1 - $val2" 
+echo "$val1 - $val2" | bc
