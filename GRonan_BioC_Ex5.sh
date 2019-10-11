@@ -18,7 +18,7 @@ do
 done
 high=$(cat $file | grep -E $(cat temp.txt | tail -n 1) | cut -d ',' -f 1,2,4)
 low=$(cat $file | grep -E $(cat temp.txt | head -n 1) | cut -d ',' -f 1,2,4)
-fem=0
+fem=0;
 for i in {1..10}
 do
 	fem=$(($fem+$(cat $file | grep -E $(cat temp.txt | tail -n $i | head -n 1) | grep -c -E female)))
@@ -30,6 +30,14 @@ echo "The lowest earner is a $(echo $low | grep -o -E [a-z]+) with " \
 	"$(echo $low | grep -o -E [,][1-9][,] | grep -o -E [^,]) years of experience making " \
 	"$(echo $low | grep -o -E [0-9]+\\.[0-9]+) money"
 echo "The number of females among the top 10 most paid is $fem"
+rm temp.txt
 
 ## Part 3 ----------------------------------------------------------------------------------------------------------
-
+cat wages.csv | tail -n $(($(wc -l wages.csv | cut -d ' ' -f 1)-1)) | cut -d ',' -f 3,4 | grep -E 12[,] > HS.txt
+cat wages.csv | tail -n $(($(wc -l wages.csv | cut -d ' ' -f 1)-1)) | cut -d ',' -f 3,4 | grep -E 16[,] > CLG.txt
+HS_avg=$(cat HS.txt | cut -d ',' -f 2 | awk '{total = total + $1}END{print total}')
+HS_avg=$(echo "$HS_avg / $(wc -l HS.txt | cut -d ' ' -f 1)" | bc -l)
+CLG_avg=$(cat CLG.txt | cut -d ',' -f 2 | awk '{total = total + $1}END{print total}')
+CLG_avg=$(echo "$CLG_avg / $(wc -l CLG.txt | cut -d ' ' -f 1)" | bc -l)
+echo "The average wages without only 12 years of school is $HS_avg"
+echo "The average with 16 years of school is $CLG_avg"
