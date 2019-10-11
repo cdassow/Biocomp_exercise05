@@ -25,4 +25,5 @@ echo $femTopTen of the top 10 earners are female.
 echo The average secondary school graduate earns $avgSec
 echo The average college graduate earns $avgCollege
 echo Therefore, assuming this dataset refers to minimum wage for earners, we can say that graduating college confers a minimum wage that is $wageGap more than those without a college degree.
+#remove temporary wages02.txt file
 rm wages02.txt
