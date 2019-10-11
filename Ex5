@@ -1,0 +1,17 @@
+#usage bash Exercise_5.sh
+##Question 1
+echo "gender experience"
+cat wages.csv | cut -d , -f 1,2 | tail -n +2 | sort -t , -k1,1 -k2n,2 | uniq > Exercise_5
+##Question 2
+echo "highest earner"
+cat wages.csv | sort -t , -k4n,4 | tail -1 | cut -d , -f 1,2,4
+echo "lowest earner"
+cat wages.csv | sort -t , -k4n,4 | head -2 | tail -1 | cut -d , -f 1,2,4
+echo "females in top ten"
+cat wages.csv | sort -t , -k4n,4 | tail | grep female | wc -l
+##Question 3
+echo "difference between years of school"
+var1=$(cat wages.csv | cut -d , -f 3,4| grep ^12 | sort -t , -k2,2n | head -1 | cut -d , -f 2)
+var2=$(cat wages.csv | cut -d , -f 3,4| grep ^16 | sort -t , -k2,2n | head -1 | cut -d , -f 2)
+echo "$var2 - $var1" | bc
+
