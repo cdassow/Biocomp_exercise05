@@ -13,3 +13,5 @@ sed '1d' wages.csv | sort -t , -k 4 -n | head -n 1 | cut -d , -f 1,2,4
 echo " the number of females in the top ten earners is "
 sed '1d' wages.csv | sort -t , -k 4 -n -r | head -n 10 | grep female | wc -l
 
+# Task 3
+
