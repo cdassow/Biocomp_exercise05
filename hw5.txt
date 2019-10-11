@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Task 1
+cut -d , -f 1,2 wages.csv | sed '1d' | sort -t , -k 1 | sort -t , -n -k 2 | uniq > gender_experience.csv
